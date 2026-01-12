@@ -1,7 +1,10 @@
 :root{
-    --main: 91vh;
+    --main: 91.5vh;
     --borRadBut: 4px;
     --borRad: 10px;
+    --margen: 0.8vh;
+
+    overflow: none;
 }
 header{
     height: 4vh;
@@ -10,80 +13,158 @@ header{
 body{
     margin:0;
 }
-.contenedor{
+.contenedor1{
+    z-index: 1;
+
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+
+    position:fixed;
+    right:  -60vw;
     
+    overflow-x: none;
+}
+
+.contenedor2{
+    z-index: 2;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    position:fixed;
+    right: -30vw;
+
+    overflow:hidden;
 }
 .div1{
+    z-index: 1;
+
     background-color: blue;
+
     display: flex;
     justify-content: end;
+
     height: var(--main);
-    width: 28vw;
+    width: 93vw;
+
     margin-right: 0;
     padding-top: 0;
+
     border: solid black;
     border-radius: var(--borRad);
-    animation: desplegable1 0.5s infinite;
-    animation-delay: 5s;
-    
+
+    overflow: hidden;
+
+   
 }
 .button1{
+    z-index: 2;
+
     background-color: blue;
+
     height: 10vh;
     width: 2vw;
+
     margin-top: 40vh;
+    margin-right: -0.3vw;
+
     border: solid black;
     border-radius: var(--borRadBut);
     border-right: 0;
-    
+}
+.button1:active{
+    z-index: 2;
+
+    background-color: blue;
+
+    height: 10vh;
+    width: 2vw;
+
+    margin-top: 40vh;
+    margin-right: -0.3vw;
+
+    border: solid black;
+    border-radius: var(--borRadBut);
+    border-right: 0;
+
+    animation: desplegable1 ;
+    animation-duration: 0.3 ;
 }
 .div2{
+    z-index: 1;
+
     background-color: green;
+
     display: flex;
     justify-content: end;
-    height: var(--main -5vh);
-    width: 25vw;
-    margin: 3vh;
+
+    height: calc(var(--main) - 2vh);
+    width: 60vw;
+
+    margin: var(--margen);
     margin-right: 0;
     margin-left: 0;
+
     border: solid black;
     border-radius: var(--borRad);
     border-right: 0;
 
+   
     
 }
 .button2{
+    z-index: 2;
+
     background-color: green;
+
     height: 10vh;
     width: 2vw;
-    margin-top: calc(40vh - 3px);
+
+    margin-top: 40vh;
+    margin-right: -0.3vw;
+
     border: solid black;
     border-radius: var(--borRadBut);
     border-right: 0;
-    
+
+ 
 }
 .div3{
+    z-index: 3;
+
     background-color: red;
+
     display: flex;
     align-content: end;
-    height: var(--main - 15vh);
-    width: 25vw;
-    margin: 3vh;
+
+    height: calc(var(--main) - 4vh);
+    width: 30vw;
+
+    margin: calc(var(--margen) + 1vh);
     margin-right: 0;
     margin-left: 1vw;
+
     border: solid black;
     border-radius: var(--borRad);
     border-right: 0;
+
+    position: fixed;
+    right: -3vh;
+
+    overflow: hidden;
 }
 footer{
-    height: 4vh;
     background-color: darkblue;
+
+    height: 4vh;
+
+    margin-top: 92vh;
+
 }
 
 @keyframes desplegable1{
     0% {}
-    100% {width: calc( 60vw);}
+    100% {transform: translate(-30vh);}
 }
