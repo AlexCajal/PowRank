@@ -74,10 +74,10 @@ body{
     border-radius: var(--borRadBut);
     border-right: 0;
 }
-.button1:active{
+.button1:checked{
     z-index: 2;
 
-    background-color: blue;
+    background-color: rgb(0, 255, 234);
 
     height: 10vh;
     width: 2vw;
@@ -89,9 +89,16 @@ body{
     border-radius: var(--borRadBut);
     border-right: 0;
 
-    animation: desplegable1 ;
-    animation-duration: 0.3 ;
+    animation: desplegable 0.3s;
+    animation-timing-function:ease;
+    animation-fill-mode: forwards;
+    
 }
+@keyframes desplegable{
+    0% {}
+    100% {transform: translate(-30vh)}
+}
+
 .div2{
     z-index: 1;
 
@@ -164,7 +171,3 @@ footer{
 
 }
 
-@keyframes desplegable1{
-    0% {}
-    100% {transform: translate(-30vh);}
-}
