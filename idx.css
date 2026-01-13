@@ -1,38 +1,38 @@
-:root{
+:root {
     --main: 91.5vh;
     --borRadBut: 4px;
     --borRad: 10px;
     --margen: 0.8vh;
     --posBack: -60vw;
-    --posActual: -60vw;
+    --posActualBack: -40vw;
+    --posMid: -30vw;
 }
-header{
+
+header {
     height: 4vh;
     background-color: yellowgreen;
 }
-body{
-    margin:0;
+
+body {
+    margin: 0;
 }
 
-    /* BACK */
+/* BACK */
 
-.backSlide{
+.backSlide {
     z-index: 1;
 
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 
-    position:fixed;
+    position: fixed;
 
-    animation:desplazamiento2;
-    animation-duration: 0.2s;
-    animation-timing-function:ease-in-out;
-    
-    right: var(--posActual);
-    
+    right: var(--posActualBack);
+
 }
-.backMain{
+
+.backMain {
     z-index: 1;
 
     background-color: blue;
@@ -41,7 +41,7 @@ body{
     justify-content: end;
 
     height: var(--main);
-    width: 93vw;
+    width: 103vw;
 
     margin-right: 0;
     padding-top: 0;
@@ -49,7 +49,8 @@ body{
     border: solid black;
     border-radius: var(--borRad);
 }
-.backBtn{
+
+.backBtn {
     z-index: 2;
 
     background-color: blue;
@@ -65,58 +66,77 @@ body{
     border-right: 0;
 
 }
-#backToggle{
+
+#backToggle {
     display: none;
 }
+
 .backSlide:has(#backToggle:checked) {
-    
-    animation:backIda;
-    animation-duration: 0.2s;
-    animation-timing-function:ease-in-out;
 
-    right: calc(var(--posActual) + 30vw); 
-   
-   
+    animation: backIda;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+    background-color: black;
 }
+
 .backSlide:has(#backToggle:not(:checked)) {
-    
-    animation:backVuelta;
+
+    animation: backVuelta;
     animation-duration: 0.2s;
-    animation-timing-function:ease-in-out;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 
-    /* right: calc(var(--posActual));  */
 }
-    /* ANIMACIONES */
 
-    /* IDA */
+/* ANIMACIONES */
 
- @keyframes backIda {
-  0% {right: var(--posActual);}
-  100% {right: calc(var(--posActual) + 30vw);}
- }
+/* IDA */
 
-    /* VUELTA */
+@keyframes backIda {
+    0% {
+        transform: translateX(30vw);
+    }
 
- @keyframes backVuelta {
-  0% {right: calc(var(--posActual) + 30vw);}
-  100% {right: var(--posActual);}
- }
+    100% {
+        transform: translateX(0vw);
+    }
+}
 
-    /* MID */
+/* VUELTA */
 
- .midSlide{
+@keyframes backVuelta {
+    0% {
+        transform: translateX(0vw);
+    }
+
+    100% {
+        transform: translateX(30vw);
+    }
+}
+
+/* MID */
+
+
+#midToggle {
+    display: none;
+}
+
+.midSlide {
     z-index: 2;
 
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 
-    position:fixed;
-    right: -30vw;
+    position: fixed;
+    right: var(--posMid);
 
-    
+
 }
-.midMain{
+
+.midMain {
     z-index: 1;
 
     background-color: green;
@@ -135,10 +155,11 @@ body{
     border-radius: var(--borRad);
     border-right: 0;
 
-   
-    
+
+
 }
-.midBtn{
+
+.midBtn {
     z-index: 2;
 
     background-color: green;
@@ -153,9 +174,67 @@ body{
     border-radius: var(--borRadBut);
     border-right: 0;
 
- 
+
 }
-.div3{
+
+.midSlide:has(#midToggle:checked){
+
+    animation: midIda;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+}
+body:has(#midToggle:checked) .backSlide{
+
+    animation: backIda;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+}
+.midSlide:has(#midToggle:not(checked)) {
+
+    animation: midVuelta;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+}
+body:has(#midToggle:not(checked)) .backSlide{
+
+    animation: backVuelta;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+}
+
+
+@keyframes midIda {
+    0% {
+        right: var(--posMid);
+    }
+
+    100% {
+        right: calc(var(--posMid) + 30vw);
+    }
+}
+
+/* VUELTA */
+
+@keyframes midVuelta {
+    0% {
+        right: calc(var(--posMid) + 30vw);
+    }
+
+    100% {
+        right: var(--posMid);
+    }
+}
+
+
+.div3 {
     z-index: 3;
 
     background-color: red;
@@ -179,7 +258,8 @@ body{
 
     overflow: hidden;
 }
-footer{
+
+footer {
     background-color: darkblue;
 
     height: 4vh;
@@ -187,4 +267,3 @@ footer{
     margin-top: 92vh;
 
 }
-
