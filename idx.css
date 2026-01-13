@@ -3,8 +3,8 @@
     --borRadBut: 4px;
     --borRad: 10px;
     --margen: 0.8vh;
-
-    overflow: none;
+    --posBack: -60vw;
+    --posActual: -60vw;
 }
 header{
     height: 4vh;
@@ -13,7 +13,10 @@ header{
 body{
     margin:0;
 }
-.contenedor1{
+
+    /* BACK */
+
+.backSlide{
     z-index: 1;
 
     display: flex;
@@ -21,24 +24,15 @@ body{
     justify-content: flex-end;
 
     position:fixed;
-    right:  -60vw;
+
+    animation:desplazamiento2;
+    animation-duration: 0.2s;
+    animation-timing-function:ease-in-out;
     
-    overflow-x: none;
+    right: var(--posActual);
+    
 }
-
-.contenedor2{
-    z-index: 2;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-
-    position:fixed;
-    right: -30vw;
-
-    overflow:hidden;
-}
-.div1{
+.backMain{
     z-index: 1;
 
     background-color: blue;
@@ -54,12 +48,8 @@ body{
 
     border: solid black;
     border-radius: var(--borRad);
-
-    overflow: hidden;
-
-   
 }
-.button1{
+.backBtn{
     z-index: 2;
 
     background-color: blue;
@@ -73,33 +63,60 @@ body{
     border: solid black;
     border-radius: var(--borRadBut);
     border-right: 0;
+
 }
-.button1:checked{
+#backToggle{
+    display: none;
+}
+.backSlide:has(#backToggle:checked) {
+    
+    animation:backIda;
+    animation-duration: 0.2s;
+    animation-timing-function:ease-in-out;
+
+    right: calc(var(--posActual) + 30vw); 
+   
+   
+}
+.backSlide:has(#backToggle:not(:checked)) {
+    
+    animation:backVuelta;
+    animation-duration: 0.2s;
+    animation-timing-function:ease-in-out;
+
+    /* right: calc(var(--posActual));  */
+}
+    /* ANIMACIONES */
+
+    /* IDA */
+
+ @keyframes backIda {
+  0% {right: var(--posActual);}
+  100% {right: calc(var(--posActual) + 30vw);}
+ }
+
+    /* VUELTA */
+
+ @keyframes backVuelta {
+  0% {right: calc(var(--posActual) + 30vw);}
+  100% {right: var(--posActual);}
+ }
+
+    /* MID */
+
+ .midSlide{
     z-index: 2;
 
-    background-color: rgb(0, 255, 234);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 
-    height: 10vh;
-    width: 2vw;
+    position:fixed;
+    right: -30vw;
 
-    margin-top: 40vh;
-    margin-right: -0.3vw;
-
-    border: solid black;
-    border-radius: var(--borRadBut);
-    border-right: 0;
-
-    animation: desplegable 0.3s;
-    animation-timing-function:ease;
-    animation-fill-mode: forwards;
     
 }
-@keyframes desplegable{
-    0% {}
-    100% {transform: translate(-30vh)}
-}
-
-.div2{
+.midMain{
     z-index: 1;
 
     background-color: green;
@@ -121,7 +138,7 @@ body{
    
     
 }
-.button2{
+.midBtn{
     z-index: 2;
 
     background-color: green;
