@@ -3,9 +3,9 @@
     --borRadBut: 4px;
     --borRad: 10px;
     --margen: 0.8vh;
-    --posBack: -60vw;
-    --posActualBack: -40vw;
-    --posMid: -30vw;
+    --posBack: 0vw;
+    --midBack: 44vw
+
 }
 
 header {
@@ -13,7 +13,7 @@ header {
     background-color: yellowgreen;
 }
 
-body {
+body {  
     margin: 0;
 }
 
@@ -23,13 +23,12 @@ body {
     z-index: 1;
 
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
 
     position: fixed;
-
-    right: var(--posActualBack);
-
+    
+    transform: translateX(calc(var(--posBack) + var(--midBack) + 20vw));
+    transition: transform 0.2s ease-in-out;
 }
 
 .backMain {
@@ -72,68 +71,24 @@ body {
 }
 
 .backSlide:has(#backToggle:checked) {
-
-    animation: backIda;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-
-    background-color: black;
+    transform: translateX(calc(var(--posBack) + var(--midBack)));
+    
 }
-
-.backSlide:has(#backToggle:not(:checked)) {
-
-    animation: backVuelta;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-
-}
-
-/* ANIMACIONES */
-
-/* IDA */
-
-@keyframes backIda {
-    0% {
-        transform: translateX(30vw);
-    }
-
-    100% {
-        transform: translateX(0vw);
-    }
-}
-
-/* VUELTA */
-
-@keyframes backVuelta {
-    0% {
-        transform: translateX(0vw);
-    }
-
-    100% {
-        transform: translateX(30vw);
-    }
-}
-
-/* MID */
-
 
 #midToggle {
     display: none;
 }
 
-.midSlide {
+.midSlide { 
     z-index: 2;
 
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
 
     position: fixed;
-    right: var(--posMid);
-
-
+   
+    transform: translateX(67vw);
+    transition: transform 0.2s ease-in-out;
 }
 
 .midMain {
@@ -178,61 +133,19 @@ body {
 }
 
 .midSlide:has(#midToggle:checked){
-
-    animation: midIda;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
+    transform: translateX(47vw);
 
 }
 body:has(#midToggle:checked) .backSlide{
-
-    animation: backIda;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-
-}
-.midSlide:has(#midToggle:not(checked)) {
-
-    animation: midVuelta;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-
-}
-body:has(#midToggle:not(checked)) .backSlide{
-
-    animation: backVuelta;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-
+    --midBack: 0vw ;
 }
 
-
-@keyframes midIda {
-    0% {
-        right: var(--posMid);
-    }
-
-    100% {
-        right: calc(var(--posMid) + 30vw);
-    }
+body:has(#midToggle:checked) {
+    --posBack: 24vw;
 }
-
-/* VUELTA */
-
-@keyframes midVuelta {
-    0% {
-        right: calc(var(--posMid) + 30vw);
-    }
-
-    100% {
-        right: var(--posMid);
-    }
+body:has(#midToggle:not(checked)) {
+    --posBack: 0vw;
 }
-
 
 .div3 {
     z-index: 3;
