@@ -1,4 +1,7 @@
 :root {
+
+    background-color: #8D99AE;
+
     --main: 91.5vh;
     --borRadBut: 4px;
     --borRad: 10px;
@@ -34,7 +37,7 @@ body {
 .backMain {
     z-index: 1;
 
-    background-color: blue;
+    background-color: #272932;
 
     display: flex;
     justify-content: end;
@@ -52,17 +55,29 @@ body {
 .backBtn {
     z-index: 2;
 
-    background-color: blue;
+    background-color: #272932;
 
     height: 10vh;
     width: 2vw;
 
     margin-top: 40vh;
-    margin-right: -0.3vw;
+    margin-right: -0.4vw;
 
-    border: solid black;
-    border-radius: var(--borRadBut);
+    border:solid rgb(26, 26, 26);
+    border-radius: 10px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
     border-right: 0;
+    
+
+}
+
+.test{
+    background-color: aqua;
+    height: 50%;
+    width: 50%;
+    margin: 25%;
+    padding: 0;
 
 }
 
@@ -94,7 +109,7 @@ body {
 .midMain {
     z-index: 1;
 
-    background-color: green;
+    background-color: #798086;
 
     display: flex;
     justify-content: end;
@@ -117,16 +132,18 @@ body {
 .midBtn {
     z-index: 2;
 
-    background-color: green;
+    background-color: #798086;
 
     height: 10vh;
     width: 2vw;
 
     margin-top: 40vh;
-    margin-right: -0.3vw;
+    margin-right: -0.4vw;
 
-    border: solid black;
-    border-radius: var(--borRadBut);
+    border: solid rgb(26, 26, 26);
+    border-radius: 10px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
     border-right: 0;
 
 
@@ -150,7 +167,7 @@ body:has(#midToggle:not(checked)) {
 .div3 {
     z-index: 3;
 
-    background-color: red;
+    background-color: #c4c4c4;
 
     display: flex;
     align-content: end;
