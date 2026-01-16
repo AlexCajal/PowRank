@@ -1,0 +1,14 @@
+:root {
+    background-color: #8D99AE;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    --main: 91.5vh;
+    --borRadBut: 4px;
+    --borRad: 10px;
+    --margen: 0.8vh;
+    --posBack: 0vw;
+    --midBack: 44vw;
+
+    --tableBorderColor: rgb(99, 99, 99) ;
+}
