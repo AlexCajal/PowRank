@@ -1,0 +1,50 @@
+main{
+    z-index: 4;
+    width:65.1vw;
+    height: 92vh;
+    display: grid;
+
+    grid-template-columns: 3fr 50fr 50fr;
+    grid-template-rows: 6fr 3fr;
+
+}
+main section{
+    background-color: rgb(65, 65, 65);
+    border: var(--tableBorderColor) solid 3px;
+
+    border-right: 0;
+
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    display: flex;
+
+    flex-direction: column;
+
+    
+}
+main section img{
+    height: 4em;
+    border-bottom: var(--tableBorderColor) solid 3px;
+    
+}
+.imagen{
+    grid-column: 1/4;
+    grid-row: 1/2;
+}
+.matchL{
+    background-color: rgb(37, 37, 37);
+    border: var(--tableBorderColor) solid 3px;
+
+    border-right: 0;
+
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.matchR{
+    background-color: rgb(54, 54, 54);
+    border: var(--tableBorderColor) solid 3px;
+    
+    grid-column: 3/4;
+    grid-row: 2/3;
+}

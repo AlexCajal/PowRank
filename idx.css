@@ -2,7 +2,7 @@
 
 header {
     height: 4vh;
-    background-color: yellowgreen;
+    background-color: rgb(49, 49, 49);
 }
 
 /*  MAIN */
@@ -16,10 +16,6 @@ body {
 
     /* FRONT */
 footer {
-    background-color: darkblue;
-
+   background-color: rgb(49, 49, 49);
     height: 4vh;
-
-    margin-top: 92vh;
-
 }
