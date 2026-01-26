@@ -7,7 +7,10 @@ main{
     grid-template-columns: 3fr 50fr 50fr;
     grid-template-rows: 6fr 3fr;
 
+    overflow: hidden;
+
 }
+
 main section{
     background-color: rgb(65, 65, 65);
     border: var(--tableBorderColor) solid 3px;
@@ -21,7 +24,7 @@ main section{
 
     flex-direction: column;
 
-    
+   
 }
 main section img{
     height: 4em;
@@ -31,6 +34,21 @@ main section img{
 .imagen{
     grid-column: 1/4;
     grid-row: 1/2;
+
+    display: flex;
+    justify-content: center;
+}
+.imagen img{
+    height: 29vw;
+
+    display: flex;
+    justify-content: center;
+
+    border-radius: 10px;
+    box-shadow: 0 0 75px 50px rgba(59, 172, 216, 0.5); 
+
+    border-top: 0;
+    border-bottom: 0;
 }
 .matchL{
     background-color: rgb(37, 37, 37);
@@ -39,6 +57,8 @@ main section img{
 
     grid-column: 2/3;
     grid-row: 2/3;
+
+   
 }
 #tituloLiga{
     grid-column: 1/3;

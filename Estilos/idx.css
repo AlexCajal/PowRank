@@ -3,11 +3,55 @@
 header {
     height: 4vh;
     background-color: rgb(49, 49, 49);
+
+    display: flex;
+    
+    align-items: center;
+    overflow: hidden;
+}
+header p{
+    padding: 0;
+    margin: 0;
+    padding-right: 0.5vw;
+
+    font-size: x-large;
+
+}
+header :nth-child(1){
+    display: flex;
+    gap: 80vw;
+}
+header img{
+    height: 3vh;
+    display: flex;
+    align-items: center;
+}
+.headerImg{
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+    gap: 2vw;
 }
 body {
     margin: 0;
 }
 footer {
-   background-color: rgb(49, 49, 49);
+    background-color: rgb(49, 49, 49);
     height: 4vh;
 }
+footer p{
+    padding: 0;
+    margin: 0;
+}
+.footerImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    padding: 0.3vw;
+}
+footer img{
+    height: 3vh;
+}
+

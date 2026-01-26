@@ -1,5 +1,5 @@
 :root {
-    background-color: #8D99AE;
+    background-color: rgb(17, 17, 17);
     font-family: Arial, sans-serif;
     color: white;
 
@@ -11,4 +11,6 @@
     --midBack: 44vw;
 
     --tableBorderColor: rgb(99, 99, 99) ;
+
+    overflow: hidden;
 }
